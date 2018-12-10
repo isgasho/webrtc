@@ -10,20 +10,9 @@ import (
 // Packet represents an RTP Packet
 // RTP is a network protocol for delivering audio and video over IP networks.
 type Packet struct {
-	Raw              []byte
-	Version          uint8
-	Padding          bool
-	Extension        bool
-	Marker           bool
-	PayloadOffset    int
-	PayloadType      uint8
-	SequenceNumber   uint16
-	Timestamp        uint32
-	SSRC             uint32
-	CSRC             []uint32
-	ExtensionProfile uint16
-	ExtensionPayload []byte
-	Payload          []byte
+	Header
+	Payload []byte
+	Raw     []byte
 }
 
 const (
